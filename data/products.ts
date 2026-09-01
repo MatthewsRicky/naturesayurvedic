@@ -432,10 +432,25 @@ export const products: Product[] = [
   },
 ];
 
-export const featuredProducts = products
-  .filter((product) => product.featured)
-  .slice(0, 4);
+export const featuredProducts = products.filter((product) => product.featured);
 
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((product) => product.slug === slug);
+}
+
+function createSlug(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export function getProductsByBrand(brand: string): Product[] {
+  const brandSlug = createSlug(brand);
+
+  return products.filter(
+    (product) => product.brand && createSlug(product.brand) === brandSlug,
+  );
 }
