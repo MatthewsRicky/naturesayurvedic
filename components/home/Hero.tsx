@@ -12,6 +12,7 @@ export default function Hero() {
           src="/images/hero/hero.jpg"
           alt="hero background"
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           priority
           className="object-cover"
         />
@@ -69,6 +70,7 @@ export default function Hero() {
                 src="/images/hero/hero.jpg"
                 alt="Nature's Ayurvedic Remedies"
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 priority
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
