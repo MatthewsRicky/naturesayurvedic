@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/images/hero/hero.jpg"
-          alt=""
+          alt="hero background"
           fill
           priority
           className="object-cover"
